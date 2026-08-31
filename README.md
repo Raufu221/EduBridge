@@ -1,59 +1,58 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# EduBridge: Online Learning & Teaching Platform with Integrated AI Tutoring
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+EduBridge is a full-stack, enterprise-grade e-learning management platform built with Laravel and Tailwind CSS. The platform connects learners, instructors, and administrators within a unified digital campus, featuring real-time AI-powered tutoring, dual-gateway payment integration, automated assessment pipelines, and dynamic certification verification.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Key Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### 🎓 Learner Experience
+* **Interactive Course Viewer:** Stream video and text lessons with real-time progress tracking.
+* **Context-Aware AI Tutor:** An in-lesson assistant powered by Llama 3 (via Groq API) that answers questions strictly using lecture transcripts and context notes.
+* **Assessment & Evaluation:** Interactive multiple-choice quizzes with instant grading and secure file upload assignment submissions.
+* **Automated Certification:** Dynamic PDF certificate generation with unique verification hashes and QR validation.
+* **Dual Payment Processing:** Secure checkout supporting international cards via Stripe and local mobile banking (bKash/Nagad) via SSLCommerz.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 👨‍🏫 Instructor Portal
+* **Course Planning & Curriculum Builder:** Modular builder for creating multi-section courses, lessons, and downloadable attachments.
+* **Quiz & Assignment Configurator:** Configure scoring parameters, time limits, answer rationales, and grading rubrics.
+* **Analytics & Financial Ledger:** Real-time metrics tracking student enrollments, retention curves, and net revenue cuts (70% instructor earnings).
+* **Automated Payout Engine:** Withdrawal request module supporting direct bank transfers and mobile wallets.
 
-## Learning Laravel
+### 🛡️ Administrative Control
+* **Instructor Screening & Auditing:** Review instructor applications, video demos, and portfolio submissions with structured approval/rejection feedback workflows.
+* **Sandbox Course QA:** Quality assurance testing environment to preview complete course structures before public storefront release.
+* **Financial Oversight:** Centralized ledger monitoring the 30% platform commission cut, audit logs, and transaction reconciliations.
+* **System Broadcasts:** Global announcement dispatch engine targeting all users, instructors, or learners specifically.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Tech Stack
 
-## Laravel Sponsors
+* **Backend Framework:** Laravel (PHP 8.x)
+* **Frontend Architecture:** Blade Templates, Tailwind CSS, Vite, JavaScript (ES6+)
+* **Database Engine:** MySQL
+* **AI & LLM Orchestration:** Groq API (Llama 3 Model)
+* **Payment Gateways:** Stripe API, SSLCommerz
+* **PDF & Document Engine:** DomPDF / Laravel PDF
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## Database Architecture Overview
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+* `users` — Authentication, profile details, and role assignments (`admin`, `instructor`, `learner`).
+* `courses` — Course metadata, category associations, pricing boundaries, and publication lifecycle status.
+* `lessons` — Curriculum modules, transcript text data for the AI context window, and media URLs.
+* `instructor_applications` — Onboarding workflow tracking applicant credentials, demo links, and review states.
+* `enrollments` — Active student course registrations and real-time progress completion percentages.
+* `transactions` & `payout_requests` — Financial ledger management for platform commissions and instructor withdrawals.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Installation & Setup
 
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Prerequisites
+* PHP >= 8.2
+* Composer
+* Node.js & NPM
+* MySQL (XAMPP or standalone service)
